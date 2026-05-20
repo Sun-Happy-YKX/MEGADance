@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MACE-Dance | SIGGRAPH 2026</title>
+    <meta
+      name="description"
+      content="MACE-Dance: Motion-Appearance Cascaded Experts for Music-Driven Dance Video Generation."
+    />
+    <meta property="og:title" content="MACE-Dance" />
+    <meta
+      property="og:description"
+      content="Motion-Appearance Cascaded Experts for Music-Driven Dance Video Generation."
+    />
+    <meta property="og:image" content="assets/images/video_poster.jpg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="paper-hero">
+      <nav class="topbar" aria-label="Primary">
+        <a class="brand" href="#">MACE-Dance</a>
+        <div class="navlinks">
+          <a href="#abstract">Abstract</a>
+          <a href="#overview">Video</a>
+          <a href="#results">Results</a>
+          <a href="#bibtex">BibTeX</a>
+        </div>
+      </nav>
+
+      <section class="hero-title" aria-labelledby="page-title">
+        <p class="venue">SIGGRAPH 2026 Conference Paper</p>
+        <h1 id="page-title">MACE-Dance</h1>
+        <p class="subtitle">
+          Motion-Appearance Cascaded Experts for Music-Driven Dance Video Generation
+        </p>
+
+        <p class="authors">
+          <span>Kaixing Yang<sup>1</sup></span>
+          <span>Jiashu Zhu<sup>2,*</sup></span>
+          <span>Xulong Tang<sup>5</sup></span>
+          <span>Ziqiao Peng<sup>1</sup></span>
+          <span>Xiangyue Zhang<sup>4</sup></span>
+          <span>Puwei Wang<sup>1,&dagger;</sup></span>
+          <span>Jiahong Wu<sup>2,&dagger;</sup></span>
+          <span>Xiangxiang Chu<sup>2</sup></span>
+          <span>Hongyan Liu<sup>3,&dagger;</sup></span>
+          <span>Jun He<sup>1</sup></span>
+        </p>
+        <p class="affiliations">
+          <span><sup>1</sup>Renmin University of China</span>
+          <span><sup>2</sup>AMap, Alibaba</span>
+          <span><sup>3</sup>Tsinghua University</span>
+          <span><sup>4</sup>Wuhan University</span>
+          <span><sup>5</sup>Malou Tech Inc</span>
+        </p>
+        <p class="author-notes">
+          <sup>*</sup>Project Leader &nbsp; <sup>&dagger;</sup>Corresponding Authors
+        </p>
+
+        <div class="actions" aria-label="Project links">
+          <a class="button primary" href="https://arxiv.org/abs/2512.18181">Paper</a>
+          <a class="button" href="assets/videos/supplementary_overview.mp4">Video</a>
+          <a class="button" href="https://github.com/AMAP-ML/MACE-Dance">Code</a>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section id="abstract" class="section abstract-section">
+        <div class="abstract-card">
+          <p class="section-kicker">Abstract</p>
+          <p>
+            We present <strong>MACE-Dance</strong>, a cascaded expert framework for
+            music-driven dance video generation. It decouples the problem into
+            <strong>music-to-3D motion generation</strong> and
+            <strong>motion-guided appearance synthesis</strong>, producing dance videos
+            with plausible motion, expressive style, coherent identity, and stable
+            temporal details.
+          </p>
+          <p>
+            A Motion Expert first generates rhythm-aligned 3D SMPL motion from music;
+            an Appearance Expert then animates the reference subject with the generated
+            motion. This motion-appearance cascade enables high-quality comparisons
+            across music-driven video generation, 3D dance generation, pose-driven
+            animation, long-sequence generation, and diverse dance genres.
+          </p>
+        </div>
+      </section>
+
+      <section id="overview" class="section overview-section">
+        <div class="section-heading center">
+          <p class="section-kicker">Overview Video</p>
+          <h2>Video</h2>
+        </div>
+        <video
+          class="overview-video"
+          controls
+          playsinline
+          poster="assets/images/video_poster.jpg"
+        >
+          <source src="assets/videos/supplementary_overview.mp4" type="video/mp4" />
+        </video>
+      </section>
+
+      <section id="results" class="section">
+        <div class="section-heading">
+          <p class="section-kicker">Results</p>
+          <h2>Comparison</h2>
+        </div>
+
+        <section class="result-group" aria-labelledby="music-driven-results">
+          <div class="group-heading">
+            <h3 id="music-driven-results">Dance Video Generation</h3>
+          </div>
+          <div class="video-grid three-up">
+            <article class="result-card">
+              <video controls muted loop playsinline preload="metadata" poster="assets/images/posters/music_driven_case.jpg">
+                <source src="assets/videos/music_driven_case.mp4" type="video/mp4" />
+              </video>
+            </article>
+            <article class="result-card">
+              <video controls muted loop playsinline preload="metadata" poster="assets/images/posters/music_driven_case_2.jpg">
+                <source src="assets/videos/music_driven_case_2.mp4" type="video/mp4" />
+              </video>
+            </article>
+            <article class="result-card">
+              <video controls muted loop playsinline preload="metadata" poster="assets/images/posters/music_driven_case_3.jpg">
+                <source src="assets/videos/music_driven_case_3.mp4" type="video/mp4" />
+              </video>
+            </article>
+          </div>
+        </section>
+
+        <section class="result-group" aria-labelledby="motion-expert-results">
+          <div class="group-heading">
+            <h3 id="motion-expert-results">3D Dance Generation</h3>
+          </div>
+          <div class="video-grid two-up">
+            <article class="result-card">
+              <video controls muted loop playsinline preload="metadata" poster="assets/images/posters/motion_expert.jpg">
+                <source src="assets/videos/motion_expert.mp4" type="video/mp4" />
+              </video>
+            </article>
+            <article class="result-card">
+              <video controls muted loop playsinline preload="metadata" poster="assets/images/posters/motion_expert_case_2.jpg">
+                <source src="assets/videos/motion_expert_case_2.mp4" type="video/mp4" />
+              </video>
+            </article>
+          </div>
+        </section>
+
+        <section class="result-group" aria-labelledby="appearance-expert-results">
+          <div class="group-heading">
+            <h3 id="appearance-expert-results">Image Animation</h3>
+          </div>
+          <div class="video-grid two-up">
+            <article class="result-card">
+              <video controls muted loop playsinline preload="metadata" poster="assets/images/posters/appearance_expert.jpg">
+                <source src="assets/videos/appearance_expert.mp4" type="video/mp4" />
+              </video>
+            </article>
+            <article class="result-card">
+              <video controls muted loop playsinline preload="metadata" poster="assets/images/posters/appearance_expert_case_2.jpg">
+                <source src="assets/videos/appearance_expert_case_2.mp4" type="video/mp4" />
+              </video>
+            </article>
+          </div>
+        </section>
+
+        <section id="ablation" class="result-subsection" aria-labelledby="ablation-results">
+          <div class="section-heading">
+            <h2 id="ablation-results">Ablation Studies</h2>
+          </div>
+          <div class="video-grid three-up">
+            <article class="result-card">
+              <video controls muted loop playsinline preload="metadata" poster="assets/images/posters/ablation_motion_architecture.jpg">
+                <source src="assets/videos/ablation_motion_architecture.mp4" type="video/mp4" />
+              </video>
+            </article>
+            <article class="result-card">
+              <video controls muted loop playsinline preload="metadata" poster="assets/images/posters/ablation_motion_strategy.jpg">
+                <source src="assets/videos/ablation_motion_strategy.mp4" type="video/mp4" />
+              </video>
+            </article>
+            <article class="result-card">
+              <video controls muted loop playsinline preload="metadata" poster="assets/images/posters/ablation_appearance.jpg">
+                <source src="assets/videos/ablation_appearance.mp4" type="video/mp4" />
+              </video>
+            </article>
+          </div>
+        </section>
+
+        <section id="long-sequence" class="result-subsection" aria-labelledby="long-sequence-results">
+          <div class="section-heading">
+            <h2 id="long-sequence-results">Long Sequence</h2>
+          </div>
+          <div class="video-grid">
+            <article class="result-card">
+              <video controls muted loop playsinline preload="metadata" poster="assets/images/posters/long_sequence.jpg">
+                <source src="assets/videos/long_sequence.mp4" type="video/mp4" />
+              </video>
+            </article>
+          </div>
+        </section>
+
+        <section id="diverse-genres" class="result-subsection" aria-labelledby="diverse-genres-results">
+          <div class="section-heading">
+            <h2 id="diverse-genres-results">Diverse Genres</h2>
+          </div>
+          <div class="video-grid four-up">
+            <article class="result-card">
+              <video controls muted loop playsinline preload="metadata" poster="assets/images/posters/genre_popping.jpg">
+                <source src="assets/videos/genre_popping.mp4" type="video/mp4" />
+              </video>
+            </article>
+            <article class="result-card">
+              <video controls muted loop playsinline preload="metadata" poster="assets/images/posters/genre_kpop.jpg">
+                <source src="assets/videos/genre_kpop.mp4" type="video/mp4" />
+              </video>
+            </article>
+            <article class="result-card">
+              <video controls muted loop playsinline preload="metadata" poster="assets/images/posters/genre_dai.jpg">
+                <source src="assets/videos/genre_dai.mp4" type="video/mp4" />
+              </video>
+            </article>
+            <article class="result-card">
+              <video controls muted loop playsinline preload="metadata" poster="assets/images/posters/genre_uyghur.jpg">
+                <source src="assets/videos/genre_uyghur.mp4" type="video/mp4" />
+              </video>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section id="bibtex" class="section citation-section">
+        <div class="section-heading">
+          <p class="section-kicker">Citation</p>
+          <h2>BibTeX</h2>
+        </div>
+        <pre><code>@article{yang2025mace,
+  title={MACE-Dance: Motion-Appearance Cascaded Experts for Music-Driven Dance Video Generation},
+  author={Yang, Kaixing and Zhu, Jiashu and Tang, Xulong and Peng, Ziqiao and Zhang, Xiangyue and Wang, Puwei and Wu, Jiahong and Chu, Xiangxiang and Liu, Hongyan and He, Jun},
+  journal={arXiv preprint arXiv:2512.18181},
+  year={2025}
+}</code></pre>
+      </section>
+    </main>
+
+    <footer>
+      <p>MACE-Dance &middot; SIGGRAPH 2026</p>
+    </footer>
+  </body>
+</html>
